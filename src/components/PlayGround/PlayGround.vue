@@ -1,29 +1,29 @@
 <template>
   <div>
     <!-- Form for the user to send a claim request -->
-    <el-form ref="form" :model="form" label-width="120px">
+    <el-form ref="form" :model="form" :rules="rules" label-width="120px">
       <!-- Input field for the user to insert their first name -->
-      <el-form-item label="First Name">
+      <el-form-item label="First Name" prop="firstName">
         <el-input placeholder="John" v-model="form.firstName" clearable></el-input>
       </el-form-item>
       <!-- Input field for the user to insert their last name -->
-      <el-form-item label="Last Name">
+      <el-form-item label="Last Name" prop="lastName">
         <el-input placeholder="Doe" v-model="form.lastName" clearable></el-input>
       </el-form-item>
       <!-- Input field for the user to insert their email -->
-      <el-form-item label="Email">
+      <el-form-item label="Email" prop="email">
         <el-input placeholder="email@example.com" v-model="form.email" clearable></el-input>
       </el-form-item>
       <!-- Input field for the user to type down the subject of the message -->
-      <el-form-item label="Subject">
+      <el-form-item label="Subject" prop="subject">
         <el-input placeholder="Example" v-model="form.subject" clearable></el-input>
       </el-form-item>
       <!-- Text area for the user to type the message -->
-      <el-form-item label="Content">
+      <el-form-item label="Content" prop="content">
         <el-input placeholder="Type here" type="textarea" v-model="form.content"></el-input>
       </el-form-item>
       <!-- Boolean checkbox for the user to agree to terms -->
-      <el-form-item>
+      <el-form-item prop="agree">
         <el-checkbox label="I agree to the terms & conditions" v-model="form.agree"></el-checkbox>
       </el-form-item>
       <!-- Submit button triggers the boolean of the dialogVisibility data return -->
